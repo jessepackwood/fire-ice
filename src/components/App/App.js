@@ -10,7 +10,7 @@ class App extends Component {
 
   async componentDidMount() {
     await this.props.houseFetch()
-    // await this.props.swornFetch()
+    // await this.props.swornFetch(this.props.swornMembers)
   }
 
   render() {

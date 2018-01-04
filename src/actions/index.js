@@ -1,4 +1,4 @@
-import {fetchHouses, getSwornMembers } from '../services/apiCalls.js'
+import {fetchHouses, fetchHouseMembers } from '../services/apiCalls.js'
 
 export const houseFetch = () => async (dispatch) => {
 	const houses = await fetchHouses();
@@ -7,7 +7,7 @@ export const houseFetch = () => async (dispatch) => {
 }
 
 export const swornFetch = () => async (dispatch) => {
-	const sworn = await getSwornMembers();
+	const sworn = await fetchHouseMembers();
 	console.log(sworn)
 	dispatch(setMembers(sworn))
 }

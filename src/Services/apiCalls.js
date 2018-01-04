@@ -31,14 +31,6 @@ export const fetchCharacter = async (link) => {
 	return member.name
 }
 
-export const getSwornMembers = async ( swornMembers ) => {
-  const members = await swornMembers.map( async (link) => {
-  	return await fetchCharacter(link)
-  });
-  console.log(members)
-  const swornHouseMembers = members
-  return swornHouseMembers
-};
 
 
 
