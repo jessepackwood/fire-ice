@@ -2,6 +2,8 @@ import React from 'react';
 import Card from '../Card/Card';
 import { connect } from 'react-redux';
 import './CardContainer.css'
+import { Provider } from 'react-redux';
+
 
 
 const CardContainer = ({ houses }) => {

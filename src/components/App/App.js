@@ -33,8 +33,8 @@ class App extends Component {
 }
 
 App.propTypes = {
-  fake: shape({ fake: string }),
-  fakeAction: func.isRequired
+  houses: PropTypes.array,
+  houseFetch:PropTypes.func
 };
 
 const mapStateToProps = (state) => ({

@@ -1,4 +1,4 @@
-import houseReducer from './houseReducer'
+import { houseReducer } from './houseReducer'
 import * as actions from '../actions'
 
 describe('houseReducer tests', () => {

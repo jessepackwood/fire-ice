@@ -9,10 +9,11 @@ class Card extends Component {
 		}
 	}
 
-	// getMembers = async (swornMembers) => {
-	// 	const members = await fetchHouseMembers(swornMembers)
-	// 	console.log(members)
-	// }
+	async componentDidMount() {
+		// const swornMemberUrls = this.props.house.map( house => {
+		// 	return house.swornMembers
+		// })
+	}
 
 
 	render() {
@@ -32,6 +33,10 @@ class Card extends Component {
 			)
 		
 	}
+
+	// const mapStateToProps = state => {
+	// 	swornMembers: state.houses.map( house => )
+	// }
 }
 
 export default Card
