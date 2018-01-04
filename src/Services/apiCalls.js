@@ -31,12 +31,9 @@ export const fetchCharacter = async (link) => {
 	return member.name
 }
 
-export const getMemberArray = async (setMembers, houseName, swornMembers) => {
-  const members = await fetchMembers(swornMembers);
-  const houseMembers = {
-    [houseName]: members
-  };
-  setMembers(houseMembers);
+export const getSwornMembers = async ( swornMembers) => {
+  const members = await fetchHouseMembers(swornMembers);
+  const swornHouseMembers = members
 };
 
 
