@@ -3,8 +3,10 @@ import PropTypes, { shape, func, string } from 'prop-types';
 import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
-import { fakeAction } from '../../actions';
+import { houseFetch } from '../../actions';
 class App extends Component {
+
+
 
   render() {
     return (
@@ -13,7 +15,7 @@ class App extends Component {
           <img src={logo} className='App-logo' alt='logo' />
           <h2>Welcome to Westeros</h2>
           <button onClick={() => {
-            this.props.fakeAction();
+            this.props.houseFetch();
             alert(this.props.fake);
           }}> FAKE ACTION</button>
         </div>
@@ -30,7 +32,7 @@ App.propTypes = {
 };
 
 const mapStateToProps = ({ fake }) => ({ fake });
-const mapDispatchToProps = dispatch => ({ fakeAction:
-  () => dispatch(fakeAction())
+const mapDispatchToProps = dispatch => ({ houseFetch:
+  () => dispatch(houseFetch())
 });
 export default connect(mapStateToProps, mapDispatchToProps)(App);

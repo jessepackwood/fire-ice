@@ -14,8 +14,10 @@
     "redux-thunk": "^2.2.0"
   },
   "dependencies": {
+    "enzyme": "^3.3.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "redux-mock-store": "^1.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
