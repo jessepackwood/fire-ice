@@ -1,6 +1,8 @@
-import React from 'react'
-import Card from '../Card/Card'
-import { connect } from 'react-redux'
+import React from 'react';
+import Card from '../Card/Card';
+import { connect } from 'react-redux';
+import './CardContainer.css'
+
 
 const CardContainer = ({ houses }) => {
   const cards = houses.map((house, index) => 
