@@ -1,12 +1,22 @@
 import React from 'react'
 import Card from '../Card/Card'
+import { connect } from 'react-redux'
 
-const CardContainer = () => {
-	return (
-		<div>
-			Card Container
-		</div>
-		)
+const CardContainer = ({ houses }) => {
+  const cards = houses.map((house, index) => 
+    <Card 
+      key={`card-${index}`}
+      house={house} />);
+
+  return (
+    <div className="card-container">
+      {cards}
+    </div>
+  );
 }
 
-export default CardContainer
+const mapStateToProps = ( state ) => {
+	houses: state.houses
+}
+
+export default connect(mapStateToProps, null)(CardContainer)

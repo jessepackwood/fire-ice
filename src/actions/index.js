@@ -1,6 +1,4 @@
-import {
-	fetchHouses
-} from '../services/apiCalls.js'
+import {fetchHouses} from '../services/apiCalls.js'
 
 export const houseFetch = () => async (dispatch) => {
 	const houses = await fetchHouses();

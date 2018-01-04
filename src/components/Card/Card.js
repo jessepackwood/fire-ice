@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
-
+import { fetchHouseMembers } from '../../services/apiCalls.js';
+import './Card.css'
 class Card extends Component {
 	constructor() {
 		super();
@@ -9,14 +9,21 @@ class Card extends Component {
 		}
 	}
 
+	// getMembers = async (swornMembers) => {
+	// 	const members = await fetchHouseMembers(swornMembers)
+	// 	console.log(members)
+	// }
+
+
 	render() {
 		const { house } = this.props;
+		console.log(house)
 		return (
 			<div className='card'>
 				<h2>{ house.name }</h2>
-				<span>{ house.founded } </span>
+				<p>Founded: { house.founded } </p>
 				<h3>Coat of Arms</h3>
-				<span>{ house.coatOfArms}</span>
+				<p>{ house.coatOfArms}</p>
 				<h3>Ancestral Weapons</h3>
 				<div>{ house.ancestralWeapons } </div>
 			</div>

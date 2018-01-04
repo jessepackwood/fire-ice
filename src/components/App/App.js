@@ -8,8 +8,8 @@ import { houseFetch } from '../../actions';
 import CardContainer from '../CardContainer/CardContainer'
 class App extends Component {
 
-  componentDidMount() {
-    this.props.houseFetch()
+  async componentDidMount() {
+    await this.props.houseFetch()
   }
 
   render() {
@@ -21,7 +21,7 @@ class App extends Component {
         </div>
         <div className='Display-info'>
         {!!this.props.houses.length && 
-          <CardContainer />
+          <CardContainer houses={this.props.houses}/>
         }
         {!this.props.houses.length && 
           <img src={wolf} />
