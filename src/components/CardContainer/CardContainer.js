@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import './CardContainer.css'
 import { Provider } from 'react-redux';
 
-
-
 const CardContainer = ({ houses }) => {
   const cards = houses.map((house, index) => 
     <Card 
@@ -22,5 +20,6 @@ const CardContainer = ({ houses }) => {
 const mapStateToProps = ( state ) => {
 	houses: state.houses
 }
+
 
 export default connect(mapStateToProps, null)(CardContainer)

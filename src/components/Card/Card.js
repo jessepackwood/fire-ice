@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 import { fetchHouseMembers } from '../../services/apiCalls.js';
 import './Card.css'
+import { swornFetch } from '../../actions';
+
+
 class Card extends Component {
 	constructor() {
 		super();
 		this.state = {
 
 		}
-	}
-
-	async componentDidMount() {
-		// const swornMemberUrls = this.props.house.map( house => {
-		// 	return house.swornMembers
-		// })
 	}
 
 
@@ -29,14 +26,15 @@ class Card extends Component {
 				<p>{ house.coatOfArms}</p>
 				<h3>Ancestral Weapons</h3>
 				<div>{ house.ancestralWeapons } </div>
+				<p className='sworn hide'>Sworn Members:</p>
 			</div>
 			)
-		
+		}
 	}
 
-	// const mapStateToProps = state => {
-	// 	swornMembers: state.houses.map( house => )
-	// }
-}
+
+	// const mapDispatchToProps = dispatch => ({
+	// 	swornFetch: () => dispatch(swornFetch())
+	// })
 
 export default Card
