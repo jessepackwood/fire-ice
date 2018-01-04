@@ -6,7 +6,9 @@ import { connect } from 'react-redux';
 import { houseFetch } from '../../actions';
 class App extends Component {
 
-
+  componentDidMount() {
+    this.props.houseFetch()
+  }
 
   render() {
     return (
@@ -16,8 +18,8 @@ class App extends Component {
           <h2>Welcome to Westeros</h2>
           <button onClick={() => {
             this.props.houseFetch();
-            alert(this.props.fake);
-          }}> FAKE ACTION</button>
+            alert(this.props.houses);
+          }}>Fetch Houses</button>
         </div>
         <div className='Display-info'>
         </div>
@@ -31,8 +33,12 @@ App.propTypes = {
   fakeAction: func.isRequired
 };
 
-const mapStateToProps = ({ fake }) => ({ fake });
+const mapStateToProps = (state) => ({
+  houses: state.houses
+});
+
 const mapDispatchToProps = dispatch => ({ houseFetch:
   () => dispatch(houseFetch())
 });
+
 export default connect(mapStateToProps, mapDispatchToProps)(App);

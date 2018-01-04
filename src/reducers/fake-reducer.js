@@ -1,4 +1,4 @@
-export const fake = (state=[], action) => {
+export const houseReducer = (state=[], action) => {
   switch (action.type) {
   	case 'FETCH_HOUSES':
   		return action.houses

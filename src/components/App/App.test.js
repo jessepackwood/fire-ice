@@ -8,7 +8,7 @@ const middleware = [thunk];
 const mockStore = configureStore(middleware);
 
 describe('App tests', () => {
-	const store = mockStore([])
+	const store = mockStore({houses: []})
 
 	it('should be defined', () => {
 		const app = shallow(<App store={store}/>)
