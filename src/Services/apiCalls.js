@@ -11,3 +11,6 @@ export const fetchHouses = async () => {
 	}
 };
 
+export const fetchHouseNames = async () => {
+	
+}

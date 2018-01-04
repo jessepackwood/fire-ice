@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes, { shape, func, string } from 'prop-types';
 import logo from './logo.svg';
+import wolf from '../../assets/wolf.gif'
 import './App.css';
 import { connect } from 'react-redux';
 import { houseFetch } from '../../actions';
+import CardContainer from '../CardContainer/CardContainer'
 class App extends Component {
 
   componentDidMount() {
@@ -16,12 +18,14 @@ class App extends Component {
         <div className='App-header'>
           <img src={logo} className='App-logo' alt='logo' />
           <h2>Welcome to Westeros</h2>
-          <button onClick={() => {
-            this.props.houseFetch();
-            alert(this.props.houses);
-          }}>Fetch Houses</button>
         </div>
         <div className='Display-info'>
+        {!!this.props.houses.length && 
+          <CardContainer />
+        }
+        {!this.props.houses.length && 
+          <img src={wolf} />
+        }
         </div>
       </div>
     );

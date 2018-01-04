@@ -4,6 +4,7 @@ import {
 
 export const houseFetch = () => async (dispatch) => {
 	const houses = await fetchHouses();
+	console.log(houses)
 	dispatch(setHouses(houses))
 }
 
