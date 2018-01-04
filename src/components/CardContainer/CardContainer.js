@@ -21,4 +21,5 @@ const mapStateToProps = ( state ) => {
 	houses: state.houses
 }
 
+
 export default connect(mapStateToProps, null)(CardContainer)

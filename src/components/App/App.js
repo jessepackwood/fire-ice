@@ -4,12 +4,13 @@ import logo from './logo.svg';
 import wolf from '../../assets/wolf.gif'
 import './App.css';
 import { connect } from 'react-redux';
-import { houseFetch } from '../../actions';
+import { houseFetch, swornFetch } from '../../actions';
 import CardContainer from '../CardContainer/CardContainer'
 class App extends Component {
 
   async componentDidMount() {
     await this.props.houseFetch()
+    // await this.props.swornFetch()
   }
 
   render() {
@@ -38,11 +39,13 @@ App.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  houses: state.houses
+  houses: state.houses,
+  swornMembers: state.swornMembers
 });
 
-const mapDispatchToProps = dispatch => ({ houseFetch:
-  () => dispatch(houseFetch())
+const mapDispatchToProps = dispatch => ({ 
+  houseFetch: () => dispatch(houseFetch()),
+  swornFetch: () => dispatch(swornFetch())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
